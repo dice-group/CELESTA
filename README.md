@@ -10,6 +10,37 @@ CELESTA is a hybrid Entity Disambiguation (ED) framework designed for low-resour
 </p>
 
 
+## 📂 Repository Structure
+```
+│
+├── datasets/                     # Input datasets (IndGEL, IndQEL, IndEL-WIKI)
+├── images/                       # Architecture visualizations
+│   └── celesta_architecture.jpg
+├── src/                          # Source code for CELESTA modules
+│   ├── mention_expansion/        # Mention expansion scripts
+│   ├── selection/                # Similarity-based selector
+│   ├── ed/                       # Entity disambiguation logic
+│   └── evaluation/               # Scoring & evaluation tools
+├── configs/                      # YAML configuration files
+├── requirements.txt              # Python dependencies
+├── README.md                     # Project overview
+└── LICENSE                       # License file
+```
+
+## ⚙️ Installation
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/dice-group/CELESTA.git
+   cd CELESTA ```
+
+2. **Create the environment**
+```
+conda create -n celesta python=3.10
+conda activate celesta
+pip install -r requirements.txt
+```
+
 ## Evaluation Dataset
 CELESTA is evaluated on three Indonesian ED datasets, i.e. IndGEL, IndQEL, and IndEL-WIKI. The first two datasets come from [IndEL dataset](https://github.com/dice-group/IndEL) in which IndGEL is the general domain and IndQEL is the specific domain. We created the third dataset, IndEL-WIKI, to provide more datasets to evaluate CELESTA. The followings are the detail of each datasets:
 
@@ -25,7 +56,22 @@ CELESTA is evaluated on three Indonesian ED datasets, i.e. IndGEL, IndQEL, and I
 
 
 ## Large Language Models (LLMs)
-CELESTA utilizes two LLMs, each from multilingual and monolingual (in this case, Indonesian monolingual). The multilingual LLMs are [Llama-3](https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct) and [Mistral](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3). The Indonesian monolingual LLMs are [Komodo](https://huggingface.co/suayptalha/Komodo-7B-Instruct) and [Merak](https://huggingface.co/Ichsan2895/Merak-7B-v4-GGUF).
+
+CELESTA uses **two parallel LLMs**:
+
+- **Multilingual LLMs**
+  - [LLaMA-3](https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct)
+  - [Mistral](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3)
+
+- **Indonesian Monolingual LLMs**
+  - [Komodo](https://huggingface.co/suayptalha/Komodo-7B-Instruct)
+  - [Merak](https://huggingface.co/Ichsan2895/Merak-7B-v4-GGUF)
 
 
+## 🚀 Usage
+
+1. Run Mention Expansion
+```
+python src/mention_expansion/run_expansion.py --config configs/expansion_config.yaml
+```
 
