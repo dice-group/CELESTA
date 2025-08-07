@@ -17,11 +17,7 @@ CELESTA is a hybrid Entity Disambiguation (ED) framework designed for low-resour
 ├── images/                       # Architecture visualizations
 │   └── celesta_architecture.jpg
 ├── src/                          # Source code for CELESTA modules
-│   ├── mention_expansion/        # Mention expansion scripts
-│   ├── selection/                # Similarity-based selector
-│   ├── ed/                       # Entity disambiguation logic
-│   └── evaluation/               # Scoring & evaluation tools
-├── configs/                      # YAML configuration files
+│   └── mention_expansion/        # Mention expansion scripts
 ├── requirements.txt              # Python dependencies
 ├── README.md                     # Project overview
 └── LICENSE                       # License file
@@ -72,6 +68,6 @@ CELESTA uses **two parallel LLMs**:
 
 1. Run Mention Expansion
 ```
-python src/mention_expansion/run_expansion.py --config configs/expansion_config.yaml
+python src/mention_expansion.py
 ```
 
