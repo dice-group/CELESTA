@@ -18,8 +18,7 @@ def parse_arguments():
     parser = argparse.ArgumentParser(description="Mention Expansion with Komodo")
     parser.add_argument('--model_name', type=str, default="suayptalha/Komodo-7B-Instruct")
     parser.add_argument('--prompt_type', type=str, default="zero-shot")
-    parser.add_argument('--domain', type=str, default="generalDomain")
-    parser.add_argument('--dataset', type=str, default="IndEL")
+    parser.add_argument('--dataset', type=str, default="IndGEL")
     parser.add_argument('--split', type=str, default="test")
     parser.add_argument('--llm_name', type=str, default="Komodo")
     parser.add_argument('--input_dir', type=str, default="../datasets/")
@@ -196,10 +195,10 @@ def main():
             trust_remote_code=True
         )
 
-    df_path = f'{args.input_dir}/{args.domain}/{args.split}_set_{args.dataset}.tsv'
+    df_path = f'{args.input_dir}/{args.dataset}/test_set.tsv'
     df = pd.read_csv(df_path, sep="\t")
 
-    save_dir = f'{args.output_dir}/{args.domain}/resultsUsing{args.llm_name}/temperature_0_1/{args.prompt_type}/'
+    save_dir = f'{args.output_dir}/{args.dataset}/resultsUsing{args.llm_name}/temperature_0_1/{args.prompt_type}/'
     os.makedirs(save_dir, exist_ok=True)
     output_path = f'{save_dir}/entity_expansion_{args.split}Set_{args.domain}_{args.llm_name}.tsv'
 
