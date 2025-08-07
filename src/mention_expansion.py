@@ -21,7 +21,7 @@ def parse_arguments():
     parser.add_argument('--dataset', type=str, default="IndGEL")
     parser.add_argument('--split', type=str, default="test")
     parser.add_argument('--llm_name', type=str, default="Komodo")
-    parser.add_argument('--input_dir', type=str, default="../datasets/")
+    parser.add_argument('--input_dir', type=str, default="../datasets")
     parser.add_argument('--output_dir', type=str, default="mentionExpansionResults")
     parser.add_argument('--batch_size', type=int, default=8)
     parser.add_argument('--save_every', type=int, default=100)
@@ -200,7 +200,7 @@ def main():
 
     save_dir = f'{args.output_dir}/{args.dataset}/resultsUsing{args.llm_name}/temperature_0_1/{args.prompt_type}/'
     os.makedirs(save_dir, exist_ok=True)
-    output_path = f'{save_dir}/entity_expansion_{args.split}Set_{args.domain}_{args.llm_name}.tsv'
+    output_path = f'{save_dir}/entity_expansion_{args.dataset}_{args.llm_name}.tsv'
 
     already_done_df, already_done_ids = load_existing_results(output_path)
 
