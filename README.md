@@ -37,18 +37,22 @@ conda activate celesta
 pip install -r requirements.txt
 ```
 
-## Evaluation Dataset
-CELESTA is evaluated on three Indonesian ED datasets, i.e. IndGEL, IndQEL, and IndEL-WIKI. The first two datasets come from [IndEL dataset](https://github.com/dice-group/IndEL) in which IndGEL is the general domain and IndQEL is the specific domain. We created the third dataset, IndEL-WIKI, to provide more datasets to evaluate CELESTA. The followings are the detail of each datasets:
+## Evaluation Datasets
 
-|Dataset's Property           |IndGEL|IndQEL|IndEL-WIKI|
-|-----------------------------|------|------|----------|
-|Sentences  	              |2114  |2621  |24678     |
-|Total entities               |4765  |2453  |24678     |
-|Unique entites               |55    |16    |24678     |
-|Entities (avg) in a sentence |2.4   |1.6   |1.0       | 
-|Sentences in train set       |1674  |2076  |17172     |
-|Sentences in val set         |230   |284   |4958      |
-|Sentences in test set        |230   |284   |4958      |
+CELESTA is evaluated on three Indonesian Entity Disambiguation (ED) datasets: **IndGEL**, **IndQEL**, and **IndEL-WIKI**.  
+- **IndGEL** (general domain) and **IndQEL** (specific domain) are from the [IndEL dataset](https://link-to-IndEL-dataset).  
+- **IndEL-WIKI** is a new dataset we created to provide additional evaluation data for CELESTA.
+
+| Dataset Property             | IndGEL | IndQEL | IndEL-WIKI |
+|------------------------------|-------:|-------:|-----------:|
+| **Sentences**                | 2,114  | 2,621  | 24,678     |
+| **Total entities**           | 4,765  | 2,453  | 24,678     |
+| **Unique entities**          | 55     | 16     | 24,678     |
+| **Entities / sentence**      | 2.4    | 1.6    | 1.0        |
+| **Train set sentences**      | 1,674  | 2,076  | 17,172     |
+| **Validation set sentences** | 230    | 284    | 4,958      |
+| **Test set sentences**       | 230    | 284    | 4,958      |
+
 
 
 ## Large Language Models (LLMs)
