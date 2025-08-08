@@ -109,10 +109,6 @@ bash run-CELESTA-mGENRE.sh
 ### 📈 Results
 The table below compares CELESTA with two baseline ED models ([ReFinED](https://github.com/amazon-science/ReFinED) and [mGENRE](https://github.com/facebookresearch/GENRE)) across the three evaluation datasets. **Bold** values indicate the highest score for each metric within a dataset.
 
-## Results
-The table below compares CELESTA with two baseline ED models (ReFinED and mGENRE) across the three evaluation datasets. **Bold** values indicate the highest score for each metric within a dataset.
-
-
 | Dataset     | Model            | Precision | Recall  | F1      |
 |-------------|------------------|-----------|---------|---------|
 | **IndGEL**  | ReFinED          | 0.749     | 0.547   | 0.633   |
@@ -127,8 +123,7 @@ The table below compares CELESTA with two baseline ED models (ReFinED and mGENRE
 
 
 <p>
-  The table below reports Precision (P), Recall (R), and F1 for CELESTA and individual LLM configurations across the three datasets, under <b>zero-shot</b> and <b>few-shot</b> prompting.<br>
-  <b>Bold</b> values indicate the highest F1 score within each dataset and prompting setting. The following results are obtained when CELESTA uses ReFinED to generate candidate entities and retrieve the corresponding Wikidata URIs.
+The table below reports Precision (P), Recall (R), and F1 for CELESTA and individual LLM configurations across the three datasets, under <b>zero-shot</b> and <b>few-shot</b> prompting. <b>Bold</b> values indicate the highest F1 score within each dataset and prompting setting. The following results are obtained when CELESTA uses ReFinED to generate candidate entities and retrieve the corresponding Wikidata URIs.
 </p>
 
 <table>
