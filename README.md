@@ -108,10 +108,10 @@ bash run-CELESTA-mGENRE.sh
 
 ### 📈 Results
 The table below compares CELESTA with two baseline ED models ([ReFinED](https://github.com/amazon-science/ReFinED) and [mGENRE](https://github.com/facebookresearch/GENRE)) across the three evaluation datasets. **Bold** values indicate the highest score for each metric within a dataset.
-=======
+
 ## Results
 The table below compares CELESTA with two baseline ED models (ReFinED and mGENRE) across the three evaluation datasets. **Bold** values indicate the highest score for each metric within a dataset.
->>>>>>> a5eb7a1b47d05621c934da881c0e7c9ea5eb25a1
+
 
 | Dataset     | Model            | Precision | Recall  | F1      |
 |-------------|------------------|-----------|---------|---------|
