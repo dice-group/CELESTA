@@ -272,20 +272,7 @@ The table below reports Precision (P), Recall (R), and F1 for CELESTA and indivi
 </tbody>
 </table>
 
-## 🚀 Usage
 
-1. Run Mention Expansion
-```
-# Change directory to the src folder
-cd src
-
-# To run the mention expansion script
-# usage: mention_expansion.py [-h] [--model_name MODEL_NAME] [--prompt_type PROMPT_TYPE] [--dataset DATASET] [--split SPLIT] [--llm_name LLM_NAME] [--input_dir INPUT_DIR]
-#                            [--output_dir OUTPUT_DIR] [--batch_size BATCH_SIZE] [--save_every SAVE_EVERY] [--save_interval SAVE_INTERVAL]
-
-python mention_expansion.py --model_name meta-llama/Meta-Llama-3-70B-Instruct --prompt_type few-shot --dataset IndGEL --llm_name llama-3
-
-```
 
 
 
