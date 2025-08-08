@@ -42,7 +42,7 @@ pip install -r requirements.txt
 ### Datasets
 
 CELESTA is evaluated on three Indonesian Entity Disambiguation (ED) datasets: **IndGEL**, **IndQEL**, and **IndEL-WIKI**.  
-- **IndGEL** (general domain) and **IndQEL** (specific domain) are from the [IndEL dataset](https://link-to-IndEL-dataset).  
+- **IndGEL** (general domain) and **IndQEL** (specific domain) are from the [IndEL dataset](https://github.com/dice-group/IndEL).  
 - **IndEL-WIKI** is a new dataset we created to provide additional evaluation data for CELESTA.
 
 | Dataset Property             | IndGEL | IndQEL | IndEL-WIKI |
