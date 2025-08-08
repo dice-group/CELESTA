@@ -83,3 +83,6 @@ python mention_expansion.py --model_name meta-llama/Meta-Llama-3-70B-Instruct --
 
 ```
 
+2. Entity Disambiguation
+### Entity Disambiguation with mGENRE
+
