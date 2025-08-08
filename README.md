@@ -39,7 +39,7 @@ pip install -r requirements.txt
 
 ## Evaluation
 
-### Datasets
+### 📊 Datasets
 
 CELESTA is evaluated on three Indonesian Entity Disambiguation (ED) datasets: **IndGEL**, **IndQEL**, and **IndEL-WIKI**.  
 - **IndGEL** (general domain) and **IndQEL** (specific domain) are from the [IndEL dataset](https://github.com/dice-group/IndEL).  
@@ -57,7 +57,7 @@ CELESTA is evaluated on three Indonesian Entity Disambiguation (ED) datasets: **
 
 
 
-### Large Language Models (LLMs)
+### 🤖 Large Language Models (LLMs)
 
 CELESTA uses **two hybrid LLMs**:
 
@@ -70,8 +70,8 @@ CELESTA uses **two hybrid LLMs**:
   - [Merak](https://huggingface.co/Ichsan2895/Merak-7B-v4-GGUF)
 
 
-### Results
-The table below compares CELESTA with two baseline ED models (ReFinED and mGENRE) across the three evaluation datasets. **Bold** values indicate the highest score for each metric within a dataset.
+### 📈 Results
+The table below compares CELESTA with two baseline ED models ([ReFinED](https://github.com/amazon-science/ReFinED) and [mGENRE](https://github.com/facebookresearch/GENRE)) across the three evaluation datasets. **Bold** values indicate the highest score for each metric within a dataset.
 
 | Dataset     | Model            | Precision | Recall  | F1      |
 |-------------|------------------|-----------|---------|---------|
@@ -88,7 +88,7 @@ The table below compares CELESTA with two baseline ED models (ReFinED and mGENRE
 
 <p>
   The table below reports Precision (P), Recall (R), and F1 for CELESTA and individual LLM configurations across the three datasets, under <b>zero-shot</b> and <b>few-shot</b> prompting.<br>
-  <b>Bold</b> values indicate the highest F1 score within each dataset and prompting setting. Shaded rows highlight CELESTA results.
+  <b>Bold</b> values indicate the highest F1 score within each dataset and prompting setting. The following results are obtained when CELESTA uses ReFinED to generate candidate entities and retrieve the corresponding Wikidata URIs.
 </p>
 
 <table>
@@ -163,6 +163,79 @@ The table below compares CELESTA with two baseline ED models (ReFinED and mGENRE
 </tbody>
 </table>
 
+<p>The following results are obtained when CELESTA uses mGENRE to generate candidate entities and retrieve the corresponding Wikidata URIs.</p>
+
+<table>
+<thead>
+<tr>
+<th rowspan="2">Dataset</th>
+<th rowspan="2">Model</th>
+<th colspan="3">Zero-shot</th>
+<th colspan="3">Few-shot</th>
+</tr>
+<tr>
+<th>P</th><th>R</th><th>F1</th>
+<th>P</th><th>R</th><th>F1</th>
+</tr>
+</thead>
+<tbody>
+
+<!-- IndGEL -->
+<tr>
+<td rowspan="9"><b>IndGEL</b></td>
+<td>LLaMA-3</td><td><b>0.720</b></td><td><b>0.694</b></td><td><b>0.707</b></td><td>0.742</td><td>0.718</td><td>0.730</td>
+</tr>
+<tr><td>Mistral</td><td>0.667</td><td>0.640</td><td>0.653</td><td>0.607</td><td>0.584</td><td>0.595</td></tr>
+<tr><td>Komodo</td><td>0.702</td><td>0.668</td><td>0.685</td><td>0.740</td><td>0.698</td><td>0.718</td></tr>
+<tr><td>Merak</td><td>0.611</td><td>0.576</td><td>0.594</td><td>0.696</td><td>0.672</td><td>0.684</td></tr>
+
+<tr style="background-color:#f0f0f0">
+<td colspan="7"><b>CELESTA with mGENRE</b></td>
+</tr>
+
+<tr><td>LLaMA-3 & Komodo</td><td>0.695</td><td>0.660</td><td>0.677</td><td>0.741</td><td>0.708</td><td>0.724</td></tr>
+<tr><td>LLaMA-3 & Merak</td><td>0.631</td><td>0.596</td><td>0.613</td><td><b>0.748</b></td><td><b>0.722</b></td><td><b>0.735</b></td></tr>
+<tr><td>Mistral & Komodo</td><td>0.657</td><td>0.632</td><td>0.644</td><td>0.623</td><td>0.602</td><td>0.612</td></tr>
+<tr><td>Mistral & Merak</td><td>0.620</td><td>0.588</td><td>0.603</td><td>0.702</td><td>0.676</td><td>0.686</td></tr>
+
+<!-- IndQEL -->
+<tr>
+<td rowspan="9"><b>IndQEL</b></td>
+<td>LLaMA-3</td><td>0.298</td><td>0.298</td><td>0.298</td><td><b>0.274</b></td><td><b>0.273</b></td><td><b>0.273</b></td>
+</tr>
+<tr><td>Mistral</td><td>0.258</td><td>0.258</td><td>0.258</td><td>0.185</td><td>0.182</td><td>0.183</td></tr>
+<tr><td>Komodo</td><td>0.252</td><td>0.251</td><td>0.251</td><td>0.269</td><td>0.269</td><td>0.269</td></tr>
+<tr><td>Merak</td><td>0.233</td><td>0.233</td><td>0.233</td><td>0.255</td><td>0.255</td><td>0.255</td></tr>
+
+<tr style="background-color:#f0f0f0">
+<td colspan="7"><b>CELESTA with mGENRE</b></td>
+</tr>
+
+<tr><td>LLaMA-3 & Komodo</td><td><b>0.298</b></td><td><b>0.298</b></td><td><b>0.298</b></td><td>0.266</td><td>0.266</td><td>0.266</td></tr>
+<tr><td>LLaMA-3 & Merak</td><td>0.276</td><td>0.276</td><td>0.276</td><td>0.0.256</td><td>0.255</td><td>0.255</td></tr>
+<tr><td>Mistral & Komodo</td><td>0.262</td><td>0.262</td><td>0.262</td><td>0.185</td><td>0.182</td><td>0.183</td></tr>
+<tr><td>Mistral & Merak</td><td>0.236</td><td>0.236</td><td>0.236</td><td>0.202</td><td>0.200</td><td>0.201</td></tr>
+
+<!-- IndEL-WIKI -->
+<tr>
+<td rowspan="9"><b>IndEL-WIKI</b></td>
+<td>LLaMA-3</td><td>0.516</td><td><b>0.415</b></td><td>0.460</td><td>0.601</td><td>0.489</td><td>0.539</td>
+</tr>
+<tr><td>Mistral</td><td>0.457</td><td>0.360</td><td>0.403</td><td>0.447</td><td>0.363</td><td>0.401</td></tr>
+<tr><td>Komodo</td><td>0.542</td><td>0.401</td><td>0.461</td><td>0.547</td><td>0.422</td><td>0.476</td></tr>
+<tr><td>Merak</td><td>0.474</td><td>0.371</td><td>0.417</td><td>0.428<td>0.353</td><td>0.387</td></tr>
+
+<tr style="background-color:#f0f0f0">
+<td colspan="7"><b>CELESTA with mGENRE</b></td>
+</tr>
+
+<tr><td>LLaMA-3 & Komodo</td><td><b>0.548</b></td><td>0.411</td><td>0.470</td><td>0.618</td><td>0.481</td><td>0.537</td></tr>
+<tr><td>LLaMA-3 & Merak</td><td>0.521</td><td>0.412</td><td>0.460</td><td>0.595</td><td><b>0.495</b></td><td><b>0.540</b></td></tr>
+<tr><td>Mistral & Komodo</td><td>0.500</td><td>0.368</td><td>0.424</td><td>0.484</td><td>0.382</td><td>0.427</td></tr>
+<tr><td>Mistral & Merak</td><td>0.447</td><td>0.349</td><td>0.392</td><td>0.507</td><td>0.413</td><td>0.455</td></tr>
+
+</tbody>
+</table>
 ## 🚀 Usage
 
 1. Run Mention Expansion
