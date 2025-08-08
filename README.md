@@ -71,8 +71,7 @@ CELESTA uses **two hybrid LLMs**:
 
 
 ### Results
-The table below compares CELESTA with two baseline ED models (ReFinED and mGENRE) across the three evaluation datasets.  
-**Bold** values indicate the highest score for each metric within a dataset.
+The table below compares CELESTA with two baseline ED models (ReFinED and mGENRE) across the three evaluation datasets. **Bold** values indicate the highest score for each metric within a dataset.
 
 | Dataset     | Model            | Precision | Recall  | F1      |
 |-------------|------------------|-----------|---------|---------|
@@ -89,8 +88,7 @@ The table below compares CELESTA with two baseline ED models (ReFinED and mGENRE
 
 <p>
 The table below reports Precision (P), Recall (R), and F1 for CELESTA and individual LLM configurations across the three datasets, under **zero-shot** and **few-shot** prompting.  
-**Bold** values indicate the highest F1 score within each dataset and prompting setting.  
-Shaded rows highlight CELESTA results.
+**Bold** values indicate the highest F1 score within each dataset and prompting setting. Shaded rows highlight CELESTA results.
 </p>
 
 <table>
@@ -110,7 +108,7 @@ Shaded rows highlight CELESTA results.
 
 <!-- IndGEL -->
 <tr>
-<td rowspan="14"><b>IndGEL</b></td>
+<td rowspan="9"><b>IndGEL</b></td>
 <td>LLaMA-3</td><td>0.727</td><td><b>0.499</b></td><td><b>0.592</b></td><td>0.777</td><td>0.531</td><td>0.631</td>
 </tr>
 <tr><td>Mistral</td><td>0.699</td><td>0.411</td><td>0.517</td><td><b>0.806</b></td><td>0.310</td><td>0.448</td></tr>
@@ -128,7 +126,7 @@ Shaded rows highlight CELESTA results.
 
 <!-- IndQEL -->
 <tr>
-<td rowspan="14"><b>IndQEL</b></td>
+<td rowspan="9"><b>IndQEL</b></td>
 <td>LLaMA-3</td><td>0.154</td><td>0.051</td><td>0.077</td><td><b>0.327</b></td><td>0.058</td><td>0.099</td>
 </tr>
 <tr><td>Mistral</td><td>0.179</td><td>0.131</td><td>0.151</td><td>0.072</td><td>0.029</td><td>0.042</td></tr>
@@ -146,7 +144,7 @@ Shaded rows highlight CELESTA results.
 
 <!-- IndEL-WIKI -->
 <tr>
-<td rowspan="14"><b>IndEL-WIKI</b></td>
+<td rowspan="9"><b>IndEL-WIKI</b></td>
 <td>LLaMA-3</td><td>0.581</td><td>0.234</td><td>0.332</td><td>0.639</td><td>0.322</td><td>0.428</td>
 </tr>
 <tr><td>Mistral</td><td>0.565</td><td>0.232</td><td>0.329</td><td>0.552</td><td>0.201</td><td>0.294</td></tr>
