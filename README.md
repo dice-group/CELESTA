@@ -111,15 +111,15 @@ The table below compares CELESTA with two baseline ED models ([ReFinED](https://
 
 | Dataset     | Model            | Precision | Recall  | F1      |
 |-------------|------------------|-----------|---------|---------|
-| **IndGEL**  | ReFinED          | 0.749     | 0.547   | 0.633   |
+| **IndGEL**  | ReFinED          | **0.749**     | 0.547   | 0.633   |
 |             | mGENRE           | 0.742     | 0.718   | 0.730   |
-|             | **CELESTA (ours)** | **0.748** | **0.722** | **0.735** |
+|             | **CELESTA (ours)** | 0.748 | **0.722** | **0.735** |
 | **IndQEL**  | ReFinED          | 0.208     | 0.160   | 0.181   |
-|             | mGENRE           | **0.298** | **0.298** | **0.298** |
+|             | mGENRE           | 0.298 | 0.298 | 0.298 |
 |             | **CELESTA (ours)** | **0.298** | **0.298** | **0.298** |
 | **IndEL-WIKI** | ReFinED       | **0.627** | 0.327   | 0.430   |
-|             | mGENRE           | 0.601     | **0.489** | **0.539** |
-|             | **CELESTA (ours)** | 0.595     | 0.495   | 0.540   |
+|             | mGENRE           | 0.601     | 0.489 | 0.539 |
+|             | **CELESTA (ours)** | 0.595     | **0.495**   | **0.540**   |
 
 
 <p>
