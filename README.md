@@ -102,8 +102,11 @@ python mention_expansion.py --model_name meta-llama/Meta-Llama-3-70B-Instruct --
 2. Entity Disambiguation
 ### Entity Disambiguation with mGENRE
 ```
+# Change to mGENRE directory
+cd entity_disambiguation/GENRE/CELESTA-mGENRE
+
 # Run script to CELESTA-mGENRE
-bash run-CELESTA-mGENRE.sh  test_set.json
+bash run-CELESTA-mGENRE.sh  ../../../../results/mension_expansion/celesta/IndGEL/few-shot_llama-3_komodo/test_set.json
 ```
 
 ### 📈 Results
