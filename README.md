@@ -87,8 +87,8 @@ The table below compares CELESTA with two baseline ED models (ReFinED and mGENRE
 
 
 <p>
-The table below reports Precision (P), Recall (R), and F1 for CELESTA and individual LLM configurations across the three datasets, under **zero-shot** and **few-shot** prompting.  
-**Bold** values indicate the highest F1 score within each dataset and prompting setting. Shaded rows highlight CELESTA results.
+  The table below reports Precision (P), Recall (R), and F1 for CELESTA and individual LLM configurations across the three datasets, under <b>zero-shot</b> and <b>few-shot</b> prompting.<br>
+  <b>Bold</b> values indicate the highest F1 score within each dataset and prompting setting. Shaded rows highlight CELESTA results.
 </p>
 
 <table>
