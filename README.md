@@ -6,7 +6,7 @@
 CELESTA is a hybrid Entity Disambiguation (ED) framework designed for low-resource languages. In a case study on Indonesian, CELESTA performs parallel mention expansion using both multilingual and monolingual Large Language Models (LLMs). It then applies a similarity-based selection mechanism to choose the expansion that is most semantically aligned with the original context. Finally, the selected expansion is linked to a knowledge base entity using an off-the-shelf ED model—without requiring any fine-tuning. The following is the architecture of CELESTA:
 
 <p align="center">
-<img src="images/celesta_architecture.jpg" width="75%">
+<img src="images/celesta_architecture.png" width="95%">
 </p>
 
 
