@@ -70,7 +70,7 @@ CELESTA uses **two hybrid LLMs**:
   - [Merak](https://huggingface.co/Ichsan2895/Merak-7B-v4-GGUF)
 
 ## 🚀 Usage
-
+### Mention Expansion
 1. Run Mention Expansion
 ```
 # Change directory to the src folder
@@ -86,8 +86,12 @@ python mention_expansion.py --model_name meta-llama/Meta-Llama-3-70B-Instruct --
 
 2. Entity Disambiguation
 ### Entity Disambiguation with mGENRE
+```
+# Run script to CELESTA-mGENRE
+bash run-CELESTA-mGENRE.sh
+```
 
-### Results
+## Results
 The table below compares CELESTA with two baseline ED models (ReFinED and mGENRE) across the three evaluation datasets. **Bold** values indicate the highest score for each metric within a dataset.
 
 | Dataset     | Model            | Precision | Recall  | F1      |
