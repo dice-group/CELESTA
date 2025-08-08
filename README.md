@@ -69,9 +69,34 @@ CELESTA uses **two hybrid LLMs**:
   - [Komodo](https://huggingface.co/suayptalha/Komodo-7B-Instruct)
   - [Merak](https://huggingface.co/Ichsan2895/Merak-7B-v4-GGUF)
 
+## 🚀 Usage
+### Mention Expansion
+1. Run Mention Expansion
+```
+# Change directory to the src folder
+cd src
+
+# To run the mention expansion script
+# usage: mention_expansion.py [-h] [--model_name MODEL_NAME] [--prompt_type PROMPT_TYPE] [--dataset DATASET] [--split SPLIT] [--llm_name LLM_NAME] [--input_dir INPUT_DIR]
+#                            [--output_dir OUTPUT_DIR] [--batch_size BATCH_SIZE] [--save_every SAVE_EVERY] [--save_interval SAVE_INTERVAL]
+
+python mention_expansion.py --model_name meta-llama/Meta-Llama-3-70B-Instruct --prompt_type few-shot --dataset IndGEL --llm_name llama-3
+
+```
+
+2. Entity Disambiguation
+### Entity Disambiguation with mGENRE
+```
+# Run script to CELESTA-mGENRE
+bash run-CELESTA-mGENRE.sh
+```
 
 ### 📈 Results
 The table below compares CELESTA with two baseline ED models ([ReFinED](https://github.com/amazon-science/ReFinED) and [mGENRE](https://github.com/facebookresearch/GENRE)) across the three evaluation datasets. **Bold** values indicate the highest score for each metric within a dataset.
+=======
+## Results
+The table below compares CELESTA with two baseline ED models (ReFinED and mGENRE) across the three evaluation datasets. **Bold** values indicate the highest score for each metric within a dataset.
+>>>>>>> a5eb7a1b47d05621c934da881c0e7c9ea5eb25a1
 
 | Dataset     | Model            | Precision | Recall  | F1      |
 |-------------|------------------|-----------|---------|---------|
@@ -236,6 +261,7 @@ The table below compares CELESTA with two baseline ED models ([ReFinED](https://
 
 </tbody>
 </table>
+
 ## 🚀 Usage
 
 1. Run Mention Expansion
@@ -250,4 +276,6 @@ cd src
 python mention_expansion.py --model_name meta-llama/Meta-Llama-3-70B-Instruct --prompt_type few-shot --dataset IndGEL --llm_name llama-3
 
 ```
+
+
 
