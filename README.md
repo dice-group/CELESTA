@@ -264,7 +264,7 @@ The table below reports Precision (P), Recall (R), and F1 for CELESTA and indivi
 <td colspan="7"><b>CELESTA with mGENRE</b></td>
 </tr>
 
-<tr><td>LLaMA-3 & Komodo</td><td><b>0.548</b></td><td>0.411</td><td>0.470</td><td>0.618</td><td>0.481</td><td>0.537</td></tr>
+<tr><td>LLaMA-3 & Komodo</td><td><b>0.548</b></td><td>0.411</td><td><b>0.470</b></td><td><b>0.618</b></td><td>0.481</td><td>0.537</td></tr>
 <tr><td>LLaMA-3 & Merak</td><td>0.521</td><td>0.412</td><td>0.460</td><td>0.595</td><td><b>0.495</b></td><td><b>0.540</b></td></tr>
 <tr><td>Mistral & Komodo</td><td>0.500</td><td>0.368</td><td>0.424</td><td>0.484</td><td>0.382</td><td>0.427</td></tr>
 <tr><td>Mistral & Merak</td><td>0.447</td><td>0.349</td><td>0.392</td><td>0.507</td><td>0.413</td><td>0.455</td></tr>
