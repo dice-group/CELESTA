@@ -1,12 +1,15 @@
 import json
 import pandas as pd
+import argparse
 
-# ==== Config ====
-input_file = "test_set.json"  # Path to your file
-output_file = "converted_mentions.csv"  # Output CSV file
+# ==== Argument Parser ====
+parser = argparse.ArgumentParser(description="Convert JSON mentions to CSV with marked mentions.")
+parser.add_argument("--input_file", type=str, required=True, help="Path to the input JSON file.")
+parser.add_argument("--output_file", type=str, required=True, help="Path to the output CSV file.")
+args = parser.parse_args()
 
 # ==== Load JSON ====
-with open(input_file, "r", encoding="utf-8") as f:
+with open(args.input_file, "r", encoding="utf-8") as f:
     data = [json.loads(line) for line in f]
 
 # ==== Convert ====
@@ -17,13 +20,13 @@ for sent_id, item in enumerate(data, start=1):
         start = span["start"]
         length = span["length"]
         mention = text[start:start+length]
-        
+
         # Extract Wikidata ID (remove URI part)
         gold_wikidata_id = span["uris"][0].split("/")[-1]
-        
+
         # Create marked sentence
         marked_sentence = text[:start] + "[START] " + mention + " [END]" + text[start+length:]
-        
+
         rows.append({
             "sent_id": sent_id,
             "converted_text": marked_sentence,
@@ -33,6 +36,6 @@ for sent_id, item in enumerate(data, start=1):
 
 # ==== Save to CSV ====
 df = pd.DataFrame(rows)
-df.to_csv(output_file, index=False, encoding="utf-8")
+df.to_csv(args.output_file, index=False, encoding="utf-8")
 
-print(f"✅ Conversion completed. Saved to {output_file}")
+print(f"✅ Conversion completed. Saved to {args.output_file}")

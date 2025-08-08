@@ -2,18 +2,22 @@ import pandas as pd
 from collections import defaultdict, Counter
 from tqdm import tqdm
 import sys
-sys.path.append("../")  # folder containing 'genre' directory
 import pickle
+import torch
+import json
+import argparse
+
 from genre.trie import Trie, MarisaTrie
 from torch.serialization import add_safe_globals
 from omegaconf import DictConfig
 from omegaconf.base import ContainerMetadata
-import torch
 from genre.fairseq_model import mGENRE
-import pandas as pd
-from collections import defaultdict, Counter
-from tqdm import tqdm
-import json
+
+# ===== Argument Parser =====
+parser = argparse.ArgumentParser(description="Run mGENRE predictions on mention-annotated sentences.")
+parser.add_argument("--input_csv", type=str, required=True, help="Path to the input CSV file (converted_mentions.csv)")
+parser.add_argument("--output_csv", type=str, default="mgenre_predictions.csv", help="Path to the output CSV file")
+args = parser.parse_args()
 
 # ===== Setup GPU =====
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -38,6 +42,7 @@ torch.load = patched_torch_load
 # ===== Load model and move to GPU =====
 model = mGENRE.from_pretrained("../models/fairseq_multilingual_entity_disambiguation").eval().to(device)
 
+# ===== Top prediction filter =====
 def filter_top_predictions(predictions, mentions, lang="id"):
     top_by_mention = {}
     flat_preds = predictions[0]
@@ -82,16 +87,14 @@ def filter_top_predictions(predictions, mentions, lang="id"):
 
     return top_by_mention
 
-
 # ===== Load CSV =====
-df = pd.read_csv("converted_mentions.csv")
+df = pd.read_csv(args.input_csv)
 
 # ===== Prediction Function =====
 def predict_entity(row):
     sent_id = row["sent_id"]
     sentence = row["converted_text"]
-    m = [row["mention"]]
-    mentions = eval(m) if isinstance(m, str) else m
+    mentions = [row["mention"]]
 
     try:
         predictions = model.sample(
@@ -141,7 +144,6 @@ def predict_entity(row):
             "all_predictions": "[]"
         }]
 
-
 # ===== Apply Prediction with Progress Bar =====
 expanded_rows = []
 for _, row in tqdm(df.iterrows(), total=len(df), desc="Predicting entities (GPU)"):
@@ -149,6 +151,5 @@ for _, row in tqdm(df.iterrows(), total=len(df), desc="Predicting entities (GPU)
 
 # ===== Save Result =====
 expanded_df = pd.DataFrame(expanded_rows)
-expanded_df.to_csv("mgenre_predictions.csv", index=False)
-
-print("✅ Saved to mgenre_predictions.csv")
+expanded_df.to_csv(args.output_csv, index=False)
+print(f"✅ Saved to {args.output_csv}")
