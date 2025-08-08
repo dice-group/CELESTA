@@ -26,15 +26,30 @@ CELESTA is a hybrid Entity Disambiguation (ED) framework designed for low-resour
 ## ⚙️ Installation
 
 1. **Clone the repository**
-   ```bash
+```bash
+   
    git clone https://github.com/dice-group/CELESTA.git
-   cd CELESTA ```
+   cd CELESTA 
+
+```
 
 2. **Create the environment**
 ```
+
 conda create -n celesta python=3.10
 conda activate celesta
 pip install -r requirements.txt
+
+```
+3. **Install CELESTA-mGENRE**
+```
+
+# change folder to entity_disambiguation directory
+cd entity_disambiguation
+
+# run script to install CELESTA-mGENRE
+bash INSTALL-CELESTA-mGENRE.sh
+
 ```
 
 ## Evaluation
