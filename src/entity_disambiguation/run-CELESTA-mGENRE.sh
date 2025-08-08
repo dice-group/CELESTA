@@ -7,8 +7,15 @@ set -e
 # source ~/anaconda3/etc/profile.d/conda.sh
 # conda activate celesta
 
+# === Parse input arguments ===
+INPUT_FILE=$1
+
+# === Set default values if not provided ===
+: "${INPUT_FILE:?test_set.json}"
+
+
 echo "🔁 Step 1: Converting input JSON to CSV..."
-python CELESTA-mGENRE/run_converting_input.py --input_file test_set.json --output_file converted_mentions.csv
+python CELESTA-mGENRE/run_converting_input.py --input_file "$INPUT_FILE" --output_file converted_mentions.csv
 
 echo "🤖 Step 2: Running mGENRE prediction..."
 python CELESTA-mGENRE/run_prediction.py --input_csv converted_mentions.csv --output_csv mgenre_predictions.csv

@@ -103,7 +103,7 @@ python mention_expansion.py --model_name meta-llama/Meta-Llama-3-70B-Instruct --
 ### Entity Disambiguation with mGENRE
 ```
 # Run script to CELESTA-mGENRE
-bash run-CELESTA-mGENRE.sh
+bash run-CELESTA-mGENRE.sh  test_set.json
 ```
 
 ### 📈 Results
