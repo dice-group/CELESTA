@@ -56,12 +56,12 @@ CELESTA is evaluated on three Indonesian ED datasets, i.e. IndGEL, IndQEL, and I
 CELESTA uses **two parallel LLMs**:
 
 - **Multilingual LLMs**
-  - [LLaMA-3](https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct)
-  - [Mistral](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3)
+  - [LLaMA-3 (70B)](https://huggingface.co/meta-llama/Meta-Llama-3-70B-Instruct)
+  - [Mistral (7B)](https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.3)
 
 - **Indonesian Monolingual LLMs**
-  - [Komodo](https://huggingface.co/suayptalha/Komodo-7B-Instruct)
-  - [Merak](https://huggingface.co/Ichsan2895/Merak-7B-v4-GGUF)
+  - [Komodo (7B)](https://huggingface.co/suayptalha/Komodo-7B-Instruct)
+  - [Merak (7B)](https://huggingface.co/Ichsan2895/Merak-7B-v4-GGUF)
 
 
 ## 🚀 Usage
@@ -75,6 +75,6 @@ cd src
 # usage: mention_expansion.py [-h] [--model_name MODEL_NAME] [--prompt_type PROMPT_TYPE] [--dataset DATASET] [--split SPLIT] [--llm_name LLM_NAME] [--input_dir INPUT_DIR]
 #                            [--output_dir OUTPUT_DIR] [--batch_size BATCH_SIZE] [--save_every SAVE_EVERY] [--save_interval SAVE_INTERVAL]
 
-python src/mention_expansion.py
+python mention_expansion.py --model_name meta-llama/Meta-Llama-3-70B-Instruct --prompt_type few-shot --dataset IndGEL --llm_name llama-3 
 ```
 
