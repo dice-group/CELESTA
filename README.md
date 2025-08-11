@@ -13,14 +13,15 @@ CELESTA is a hybrid Entity Disambiguation (ED) framework designed for low-resour
 ## 📂 Repository Structure
 ```
 │
-├── datasets/                     # Input datasets (IndGEL, IndQEL, IndEL-WIKI)
-├── images/                       # Architecture visualizations
+├── datasets/                     	# Input datasets (IndGEL, IndQEL, IndEL-WIKI)
+├── images/                       	# Architecture visualizations
 │   └── celesta_architecture.jpg
-├── src/                          # Source code for CELESTA modules
-│   └── mention_expansion/        # Mention expansion scripts
-├── requirements.txt              # Python dependencies
-├── README.md                     # Project overview
-└── LICENSE                       # License file
+├── src/                          	# Source code for CELESTA modules
+│   └── mention_expansion/        	# Mention expansion scripts
+│   └── mention_expansion_selection/    # Mention expansion selection scripts
+├── requirements.txt              	# Python dependencies
+├── README.md                     	# Project overview
+└── LICENSE                       	# License file
 ```
 
 ## ⚙️ Installation
