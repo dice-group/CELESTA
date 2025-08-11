@@ -291,20 +291,7 @@ In addition to overall performance, we measure the contribution of each multilin
 | Mistral & Merak   | 46.87     | **53.43**| 0.0          |
 
 
-## 🚀 Usage
+## 📫 Contact
 
-1. Run Mention Expansion
-```
-# Change directory to the src folder
-cd src
-
-# To run the mention expansion script
-# usage: mention_expansion.py [-h] [--model_name MODEL_NAME] [--prompt_type PROMPT_TYPE] [--dataset DATASET] [--split SPLIT] [--llm_name LLM_NAME] [--input_dir INPUT_DIR]
-#                            [--output_dir OUTPUT_DIR] [--batch_size BATCH_SIZE] [--save_every SAVE_EVERY] [--save_interval SAVE_INTERVAL]
-
-python mention_expansion.py --model_name meta-llama/Meta-Llama-3-70B-Instruct --prompt_type few-shot --dataset IndGEL --llm_name llama-3
-
-```
-
-
+If you have any questions or feedbacks, feel free to contact us at ria.hari.gusmita@uni-paderborn.de or ria.gusmita@uinjkt.ac.id
 
