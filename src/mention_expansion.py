@@ -1,3 +1,5 @@
+# Expand the original mention of sentences using multilingual and monolingual LLMs
+
 import argparse
 import torch
 import pandas as pd
@@ -22,7 +24,7 @@ def parse_arguments():
     parser.add_argument('--split', type=str, default="test")
     parser.add_argument('--llm_name', type=str, default="Komodo")
     parser.add_argument('--input_dir', type=str, default="../datasets")
-    parser.add_argument('--output_dir', type=str, default="mentionExpansionResults")
+    parser.add_argument('--output_dir', type=str, default="../mention_expansion_results")
     parser.add_argument('--batch_size', type=int, default=8)
     parser.add_argument('--save_every', type=int, default=100)
     parser.add_argument('--save_interval', type=int, default=300)
@@ -198,7 +200,7 @@ def main():
     df_path = f'{args.input_dir}/{args.dataset}/test_set.tsv'
     df = pd.read_csv(df_path, sep="\t")
 
-    save_dir = f'{args.output_dir}/{args.dataset}/resultsUsing{args.llm_name}/temperature_0_1/{args.prompt_type}/'
+    save_dir = f'{args.output_dir}/{args.dataset}/{args.prompt_type}/resultsUsing{args.llm_name}/'
     os.makedirs(save_dir, exist_ok=True)
     output_path = f'{save_dir}/entity_expansion_{args.dataset}_{args.llm_name}.tsv'
 

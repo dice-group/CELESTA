@@ -13,15 +13,20 @@ CELESTA is a hybrid Entity Disambiguation (ED) framework designed for low-resour
 ## 📂 Repository Structure
 ```
 │
-├── datasets/                     	# Input datasets (IndGEL, IndQEL, IndEL-WIKI)
-├── images/                       	# Architecture visualizations
+├── datasets/                     		# Input datasets (IndGEL, IndQEL, IndEL-WIKI)
+├── ReFinED_format_datasets           		# ReFinED-purpose input datasets 
+├── images/                       		# Architecture visualizations
 │   └── celesta_architecture.jpg
-├── src/                          	# Source code for CELESTA modules
-│   └── mention_expansion/        	# Mention expansion scripts
-│   └── mention_expansion_selection/    # Mention expansion selection scripts
-├── requirements.txt              	# Python dependencies
-├── README.md                     	# Project overview
-└── LICENSE                       	# License file
+├── src/                          		# Source code for CELESTA modules
+│   └── mention_expansion/        		# Scripts of mention expansion
+│   └── mention_expansion_selection/    	# Scripts of mention expansion selection
+│   └── mention_expansion_implementation	# Scripts of mention expansion implementation on the sentences
+│   └── refined_zero_shot_evaluation.py 	# Scripts of CELESTA with ReFinED evaluation
+├── with_mention_expansion           		# Sentences with mention expansion from test sets of three datasets
+├── similarity_based_expansion_selection        # Selected mention expansion using similarity measurement
+├── requirements.txt              		# Python dependencies
+├── README.md                     		# Project overview
+└── LICENSE                       		# License file
 ```
 
 ## ⚙️ Installation
@@ -87,21 +92,61 @@ CELESTA uses **two hybrid LLMs**:
 
 ## 🚀 Usage
 ### Mention Expansion
-1. Run Mention Expansion
+1. Run mention expansion
 ```
 # Change directory to the src folder
 cd src
 
-# To run the mention expansion script
-# usage: mention_expansion.py [-h] [--model_name MODEL_NAME] [--prompt_type PROMPT_TYPE] [--dataset DATASET] [--split SPLIT] [--llm_name LLM_NAME] [--input_dir INPUT_DIR]
-#                            [--output_dir OUTPUT_DIR] [--batch_size BATCH_SIZE] [--save_every SAVE_EVERY] [--save_interval SAVE_INTERVAL]
+# Run the mention expansion script
+mention_expansion.py [-h] [--model_name MODEL_NAME] [--prompt_type PROMPT_TYPE] [--dataset DATASET] [--split SPLIT] [--llm_name LLM_NAME] [--input_dir INPUT_DIR]
+                            [--output_dir OUTPUT_DIR] [--batch_size BATCH_SIZE] [--save_every SAVE_EVERY] [--save_interval SAVE_INTERVAL]
 
-python mention_expansion.py --model_name meta-llama/Meta-Llama-3-70B-Instruct --prompt_type few-shot --dataset IndGEL --llm_name llama-3
+Example: python mention_expansion.py --model_name meta-llama/Meta-Llama-3-70B-Instruct --prompt_type few-shot --dataset IndGEL --llm_name llama-3
 
 ```
 
-2. Entity Disambiguation
-### Entity Disambiguation with mGENRE
+2. Combine all LLMs results in one file. 
+```
+# Change directory to the similarity_based_expansion_selection folder/{dataset}/{prompt_type}.
+cd ../similarity_based_expansion_selection/{dataset}/{prompt_type}
+
+# Store the files accordingly 
+```
+
+### Similarity-based mention expansion selection
+1. Run mention expansion selection
+```
+# Change directory to the src folder
+cd src
+
+# Run the mention expansion selection script
+select_expansion.py [-h] [--input_dir INPUT_DIR] [--output_dir OUTPUT_DIR] 
+                    [--dataset DATASET] [--prompt_type PROMPT_TYPE] 
+                    [--threshold THRESHOLD]
+
+Example: python mention_expansion_selection.py --input_dir ../similarity_based_expansion_selection/ --output_dir ../similarity_based_expansion_selection/ --dataset IndGEL --prompt_type few-shot --threshold 0.80
+
+```
+
+### Entity Candidates and Final Entity Selection
+1. Using [ReFinED](https://github.com/amazon-science/ReFinED) 
+```
+# Clone the [repository](https://github.com/amazon-science/ReFinED) 
+git clone https://github.com/amazon-science/ReFinED
+
+# Change the directory to ReFinED/src/
+cd ReFinED/src/
+
+# Store refined_zero_shot_evaluation.py in the current directory
+
+# Run the script
+python refined_zero_shot_evaluation.py [-h] [--input_dir INPUT_DIR] [--dataset DATASET]
+		     [--prompt_type PROMPT_TYPE] [--llm1 LLM1_NAME] [--llm2 LLM2_NAME]
+		     [--ed_threshold ED_THRESHOLD]
+
+Example: python refined_zero_shot_evaluation.py --input_dir ../similarity_based_mention_expansion --dataset IndGEL --prompt_type few-shot --llm1 Llama-3 --llm2 Komodo --ed_threshold 0.15
+
+2. Using [mGENRE](https://github.com/facebookresearch/GENRE)
 ```
 # Run script to CELESTA-mGENRE
 bash run-CELESTA-mGENRE.sh
