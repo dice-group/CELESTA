@@ -128,6 +128,20 @@ Example: python mention_expansion_selection.py --input_dir ../similarity_based_e
 
 ```
 
+### Selected mention expansion implementation
+1. Run mention expansion implementation
+```
+## Change directory to the src folder
+cd src
+
+## Run the script
+mention_expansion_implementation.py [-h] [--dataset DATASET] [--prompt_type PROMPT_TYPE] 
+                    [--llm1 LLM1_NAME] [--llm2 LLM2_NAME]
+
+Example: python mention_expansion_implementation.py --dataset IndGEL --prompt_type few-shot --llm1 Llama-3 --llm2 Komodo
+
+```
+
 ### Entity Candidates and Final Entity Selection
 1. Using [ReFinED](https://github.com/amazon-science/ReFinED) 
 ```
