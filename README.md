@@ -125,9 +125,7 @@ The table below compares CELESTA with two baseline ED models ([ReFinED](https://
 |             | **CELESTA (ours)** | 0.595     | **0.495**   | **0.540**   |
 
 
-<p>
-The table below reports Precision (P), Recall (R), and F1 for CELESTA and individual LLM configurations across the three datasets, under <b>zero-shot</b> and <b>few-shot</b> prompting. <b>Bold</b> values indicate the highest F1 score within each dataset and prompting setting. The following results are obtained when CELESTA uses ReFinED to generate candidate entities and retrieve the corresponding Wikidata URIs.
-</p>
+The table below reports Precision (P), Recall (R), and F1 for CELESTA and individual LLM configurations across the three datasets, under both **zero-shot** and **few-shot** prompting. **Bold** values mark the highest F1 score within each dataset–prompting combination. Results are shown for CELESTA using **ReFinED** to generate candidate entities and retrieve the corresponding Wikidata URIs.
 
 <table>
 <thead>
