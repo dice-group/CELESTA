@@ -1,3 +1,10 @@
+# Mention expansion selection from two LLM outputs (multilingual and monolingual) using similarity measurement.
+# 1. Each mention expansion replaces the original mention in the sentence, and sentence-level embeddings are computed.
+# 2. The same process is applied to the original sentence (with the mention highlighted).
+# 3. Cosine similarity is measured between each expansion-modified sentence and the original sentence.
+# 4. The expansion with the highest similarity above the defined threshold is selected.
+
+
 import argparse
 import torch
 from sentence_transformers import SentenceTransformer, util
@@ -126,7 +133,7 @@ def main():
 
         output_path = os.path.join(output_dir, f"selected_expansion_with_scores_{llm1}_{llm2}_{prompt}_{dataset}.tsv")
         pd.DataFrame(results).to_csv(output_path, sep="\t", index=False)
-        print(f"✅ Saved results for {llm1} & {llm2} → {output_path}")
+        print(f"Saved results for {llm1} & {llm2} → {output_path}")
 
     for llm1, llm2 in llm_pairs:
         process_llm_pair(llm1, llm2)
