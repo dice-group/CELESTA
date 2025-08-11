@@ -107,6 +107,7 @@ bash run-CELESTA-mGENRE.sh
 ```
 
 ### 📈 Results
+1. General Performance
 The table below compares CELESTA with two baseline ED models ([ReFinED](https://github.com/amazon-science/ReFinED) and [mGENRE](https://github.com/facebookresearch/GENRE)) across the three evaluation datasets. **Bold** values indicate the highest score for each metric within a dataset.
 
 | Dataset     | Model            | Precision | Recall  | F1      |
@@ -271,6 +272,24 @@ The table below reports Precision (P), Recall (R), and F1 for CELESTA and indivi
 
 </tbody>
 </table>
+
+2. Contribution of LLMs to CELESTA’s Correct Predictions
+
+In addition to overall performance, we measure the contribution of each multilingual and monolingual LLM, as well as the original mention, to CELESTA’s correct predictions in the dual multilingual–monolingual mention expansion setup, using IndGEL with few-shot prompting. A contribution is counted when a mention expansion (or the original mention) is selected by CELESTA through its similarity-based selection mechanism and leads to a correct entity prediction. The table below reports contributions when CELESTA uses either ReFinED or mGENRE for candidate generation and Wikidata URI retrieval. Values indicate the percentage of correct predictions attributed to LLM1 (multilingual), LLM2 (monolingual), or the original mention for each LLM pair. These results highlight the complementary strengths of multilingual and monolingual LLMs and the benefit of pairing them with high-recall ED backends.
+
+| LLM Pair          | LLM1 (%)  | LLM2 (%) | Original (%) |
+|-------------------|-----------|----------|--------------|
+| **CELESTA with ReFinED**                                |
+| LLaMA-3 & Komodo  | **64.49** | 12.32    | 23.19        |
+| LLaMA-3 & Merak   | 41.46     | **56.71**| 1.83         |
+| Mistral & Komodo  | **79.28** | 16.22    | 4.5          |
+| Mistral & Merak   | 43.24     | **56.76**| 0.0          |
+| **CELESTA with mGENRE**                                 |
+| LLaMA-3 & Komodo  | **59.83** | 14.53    | 25.64        |
+| LLaMA-3 & Merak   | 41.62     | **57.54**| 1.12	  |
+| Mistral & Komodo  | **78.86** | 14.43    | 6.38         |
+| Mistral & Merak   | 46.87     | **53.43**| 0.0          |
+
 
 ## 🚀 Usage
 
