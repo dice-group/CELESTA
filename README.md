@@ -105,13 +105,14 @@ Example: python mention_expansion.py --model_name meta-llama/Meta-Llama-3-70B-In
 
 ```
 
-2. Combine all LLMs results in one file. 
-```
-# Change directory to the similarity_based_expansion_selection folder/{dataset}/{prompt_type}.
+2. Combine all LLM results into a single file.
+
+# Change directory to the similarity_based_expansion_selection/{dataset}/{prompt_type} folder
 cd ../similarity_based_expansion_selection/{dataset}/{prompt_type}
 
-# Store the files accordingly 
-```
+# Store the combined files in this folder
+# Example: entity_expansion_testSet_generalDomain_allLLMs_few-shot_IndGEL.tsv
+
 
 ### Similarity-based mention expansion selection
 1. Run mention expansion selection
