@@ -161,7 +161,7 @@ python refined_zero_shot_evaluation.py [-h] [--input_dir INPUT_DIR] [--dataset D
 		     [--ed_threshold ED_THRESHOLD]
 
 Example: python refined_zero_shot_evaluation.py --input_dir ../similarity_based_mention_expansion --dataset IndGEL --prompt_type few-shot --llm1 Llama-3 --llm2 Komodo --ed_threshold 0.15
-
+```
 2. Using [mGENRE](https://github.com/facebookresearch/GENRE)
 ```
 # Run script to CELESTA-mGENRE
