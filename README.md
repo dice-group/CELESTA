@@ -144,6 +144,15 @@ Example: python mention_expansion_selection.py --input_dir ../mention_expansion_
 
 ```
 
+### Selected Mention Expansion Implementation
+1. Run mention expansion implementation
+```
+# Change directory to the src folder
+cd src
+
+# Run the mention expansion implementation script
+
+```
 ### Entity Candidates and Final Entity Selection
 1. Using [ReFinED](https://github.com/amazon-science/ReFinED) 
 ```
