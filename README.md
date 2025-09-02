@@ -6,7 +6,7 @@
 CELESTA is a hybrid Entity Disambiguation (ED) framework designed for low-resource languages. In a case study on Indonesian, CELESTA performs parallel mention expansion using both multilingual and monolingual Large Language Models (LLMs). It then applies a similarity-based selection mechanism to choose the expansion that is most semantically aligned with the original context. Finally, the selected expansion is linked to a knowledge base entity using an off-the-shelf ED model—without requiring any fine-tuning. The following is the architecture of CELESTA:
 
 <p align="center">
-<img src="images/celesta_architecture.jpg" width="95%">
+<img src="images/celesta_architecture.png" width="95%">
 </p>
 
 
@@ -128,20 +128,6 @@ Example: python mention_expansion_selection.py --input_dir ../similarity_based_e
 
 ```
 
-### Selected mention expansion implementation
-1. Run mention expansion implementation
-```
-## Change directory to the src folder
-cd src
-
-## Run the script
-mention_expansion_implementation.py [-h] [--dataset DATASET] [--prompt_type PROMPT_TYPE] 
-                    [--llm1 LLM1_NAME] [--llm2 LLM2_NAME]
-
-Example: python mention_expansion_implementation.py --dataset IndGEL --prompt_type few-shot --llm1 Llama-3 --llm2 Komodo
-
-```
-
 ### Entity Candidates and Final Entity Selection
 1. Using [ReFinED](https://github.com/amazon-science/ReFinED) 
 ```
@@ -159,7 +145,7 @@ python refined_zero_shot_evaluation.py [-h] [--input_dir INPUT_DIR] [--dataset D
 		     [--ed_threshold ED_THRESHOLD]
 
 Example: python refined_zero_shot_evaluation.py --input_dir ../similarity_based_mention_expansion --dataset IndGEL --prompt_type few-shot --llm1 Llama-3 --llm2 Komodo --ed_threshold 0.15
-```
+
 2. Using [mGENRE](https://github.com/facebookresearch/GENRE)
 ```
 # Run script to CELESTA-mGENRE
