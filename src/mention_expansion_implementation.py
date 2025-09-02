@@ -36,7 +36,7 @@ def main():
     )
     output_json_path = (
         f"{args.output_base}/{args.dataset}/{args.prompt_type}/"
-        f"test_set_with_{args.llm1}_{args.llm2}_{args.dataset}_{args.prompt_type}.json"
+        f"test_set_with_mention_expansion_{args.llm1}_{args.llm2}.json"
     )
     original_json_path = f"{args.original_json_base}/test_set_{args.dataset}.json"
 

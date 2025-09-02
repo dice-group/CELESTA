@@ -151,6 +151,10 @@ Example: python mention_expansion_selection.py --input_dir ../mention_expansion_
 cd src
 
 # Run the mention expansion implementation script
+mention_expansion_implementation.py [-h] [--prompt_type PROMPT_TYPE] [--dataset DATASET] [--llm1 LLM1_NAME] [--llm2 LLM2_NAME] [--expansion_base EXPANSION_BASE]
+                            [--original_json_base ORIGINAL_JSON_BASE] [--output_base OUTPUT_BASE]
+
+Example: python mention_expansion_implementation.py --prompt_type few-shot --dataset IndGEL --llm1 Llama-3 --llm2 Komodo
 
 ```
 ### Entity Candidates and Final Entity Selection
@@ -169,7 +173,7 @@ python refined_zero_shot_evaluation.py [-h] [--input_dir INPUT_DIR] [--dataset D
 		     [--prompt_type PROMPT_TYPE] [--llm1 LLM1_NAME] [--llm2 LLM2_NAME]
 		     [--ed_threshold ED_THRESHOLD]
 
-Example: python refined_zero_shot_evaluation.py --input_dir ../similarity_based_mention_expansion --dataset IndGEL --prompt_type few-shot --llm1 Llama-3 --llm2 Komodo --ed_threshold 0.15
+Example: python refined_zero_shot_evaluation.py --input_dir ../CELESTA/with_mention_expansion --dataset IndGEL --prompt_type few-shot --llm1 Llama-3 --llm2 Komodo --ed_threshold 0.15
 ```
 2. Using [mGENRE](https://github.com/facebookresearch/GENRE)
 ```

@@ -9,7 +9,7 @@ from refined.data_types.base_types import Entity
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Evaluate CELESTA with ReFinED in the zero-shot setting.")
-    parser.add_argument('--input_dir', type=str, default="../similarity_based_mention_expansion",
+    parser.add_argument('--input_dir', type=str, default="../CELESTA/with_mention_expansion",
                         help="Base directory containing the JSON inputs")
     parser.add_argument('--dataset', type=str, default="IndGEL",
                         help="Dataset name (e.g., IndGEL, IndQEL, IndEL-Wiki)")
@@ -75,7 +75,7 @@ def main():
         f"{args.input_dir}/"
         f"{args.dataset}/"
         f"{args.prompt_type}/"
-        f"test_set_with_selected_expansion_{args.llm1}_{args.llm2}_{args.dataset}_{args.prompt_type}.json"
+        f"test_set_with_mention_expansion_{args.llm1}_{args.llm2}.json"
     )
 
     # Load ReFinED model
