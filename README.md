@@ -13,7 +13,7 @@ CELESTA is a hybrid Entity Disambiguation (ED) framework designed for low-resour
 ## 📂 Repository Structure
 ```
 ├── datasets/                         # Input datasets (IndGEL, IndQEL, IndEL-WIKI)
-├── refined_format_datasets/          # ReFinED-purpose input datasets
+├── ReFinED_format_datasets/          # ReFinED-purpose input datasets
 ├── images/
 │   └── celesta_architecture.jpg      # Architecture visualizations
 │

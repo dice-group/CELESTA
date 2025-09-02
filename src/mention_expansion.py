@@ -200,9 +200,9 @@ def main():
     df_path = f'{args.input_dir}/{args.dataset}/test_set.tsv'
     df = pd.read_csv(df_path, sep="\t")
 
-    save_dir = f'{args.output_dir}/{args.dataset}/{args.prompt_type}/resultsUsing{args.llm_name}/'
+    save_dir = f'{args.output_dir}/{args.dataset}/{args.prompt_type}/'
     os.makedirs(save_dir, exist_ok=True)
-    output_path = f'{save_dir}/entity_expansion_{args.dataset}_{args.llm_name}.tsv'
+    output_path = f'{save_dir}/mention_expansion_{args.dataset}_{args.llm_name}.tsv'
 
     already_done_df, already_done_ids = load_existing_results(output_path)
 
