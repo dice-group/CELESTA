@@ -12,21 +12,27 @@ CELESTA is a hybrid Entity Disambiguation (ED) framework designed for low-resour
 
 ## 📂 Repository Structure
 ```
+├── datasets/                         # Input datasets (IndGEL, IndQEL, IndEL-WIKI)
+├── refined_format_datasets/          # ReFinED-purpose input datasets
+├── images/
+│   └── celesta_architecture.jpg      # Architecture visualizations
 │
-├── datasets/                     		# Input datasets (IndGEL, IndQEL, IndEL-WIKI)
-├── ReFinED_format_datasets           		# ReFinED-purpose input datasets 
-├── images/                       		# Architecture visualizations
-│   └── celesta_architecture.jpg
-├── src/                          		# Source code for CELESTA modules
-│   └── mention_expansion/        		# Scripts of mention expansion
-│   └── mention_expansion_selection/    	# Scripts of mention expansion selection
-│   └── mention_expansion_implementation	# Scripts of mention expansion implementation on the sentences
-│   └── refined_zero_shot_evaluation.py 	# Scripts of CELESTA with ReFinED evaluation
-├── with_mention_expansion           		# Sentences with mention expansion from test sets of three datasets
-├── similarity_based_expansion_selection        # Selected mention expansion using similarity measurement
-├── requirements.txt              		# Python dependencies
-├── README.md                     		# Project overview
-└── LICENSE                       		# License file
+├── src/                              # Source code for CELESTA modules
+│   ├── mention_expansion/            # Scripts for mention expansion
+│   ├── mention_expansion_selection/  # Scripts for mention expansion selection
+│   ├── mention_expansion_implementation  # Apply mention expansion to sentences
+│   └── refined_zero_shot_evaluation.py   # CELESTA evaluation with ReFinED
+│
+├── with_mention_expansion/           # Sentences with mention expansion (test sets of 3 datasets)
+├── similarity_based_expansion_selection/
+│   └── IndGEL/                       # IndGEL dataset results
+│       └── few-shot/                 # Few-shot prompt results for IndGEL
+│           └── entity_expansion_testSet_generalDomain_allLLMs_few-shot_IndGEL.tsv
+│                                      # Example: combined results from all LLMs
+│
+├── requirements.txt                  # Python dependencies
+├── README.md                         # Project overview
+└── LICENSE                           # License file
 ```
 
 ## ⚙️ Installation
