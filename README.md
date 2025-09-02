@@ -28,6 +28,7 @@ CELESTA is a hybrid Entity Disambiguation (ED) framework designed for low-resour
 │       └── few-shot/                 # Few-shot prompt results
 │           └── mention_expansion_IndGEL_Llama-3.tsv # Example: raw expansion results from Llama-3 
 │           └── mention_expansion_IndGEL_Llama-3_final.tsv # Example: finalized expansion results from Llama-3
+│           └── mention_expansion_allLLMs_IndGEL.tsv # Example: Example: combination of all LLMs mention expansion results
 ├── with_mention_expansion/           # Test set sentences with mention expansions (3 datasets)
 ├── similarity_based_expansion_selection/ # Selected mention expansion using similarity measurement
 │   └── IndGEL/                       # Results for IndGEL dataset
