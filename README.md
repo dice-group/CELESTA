@@ -13,7 +13,7 @@ CELESTA is a hybrid Entity Disambiguation (ED) framework designed for low-resour
 ## 📂 Repository Structure
 ```
 ├── datasets/                         # Input datasets (IndGEL, IndQEL, IndEL-WIKI)
-├── ReFinED_format_datasets/          # ReFinED-purpose input datasets
+├── ReFinED_format_datasets/          # Input datasets formatted for ReFinED
 ├── images/
 │   └── celesta_architecture.jpg      # Architecture visualizations
 │
@@ -23,18 +23,21 @@ CELESTA is a hybrid Entity Disambiguation (ED) framework designed for low-resour
 │   ├── mention_expansion_implementation  # Apply mention expansion to sentences
 │   └── refined_zero_shot_evaluation.py   # CELESTA evaluation with ReFinED
 │
-├── mention_expansion_results/        # mention expansion results using LLMs
-│   └── IndGEL/                       # IndGEL dataset results	
-│       └── few-shot/                 # Few-shot prompt results for IndGEL dataset
-│           └── mention_expansion_IndGEL_Llama-3.tsv # Example: mention expansion results using Llama-3 for IndGEL dataset 
-│           └── mention_expansion_IndGEL_Llama-3_final.tsv # Example: final version of mention expansion results using Llama-3 for IndGEL dataset
-├── with_mention_expansion/           # Sentences with mention expansion (test sets of 3 datasets)
-├── similarity_based_expansion_selection/
-│   └── IndGEL/                       # IndGEL dataset results
-│       └── few-shot/                 # Few-shot prompt results for IndGEL
-│           └── entity_expansion_testSet_generalDomain_allLLMs_few-shot_IndGEL.tsv
-│                                      # Example: combined results from all LLMs
-│
+├── mention_expansion_results/        # Mention expansion outputs from individual LLMs
+│   └── IndGEL/                       # Results for IndGEL dataset	
+│       └── few-shot/                 # Few-shot prompt results
+│           └── mention_expansion_IndGEL_Llama-3.tsv # Example: raw expansion results from Llama-3 
+│           └── mention_expansion_IndGEL_Llama-3_final.tsv # Example: finalized expansion results from Llama-3
+├── with_mention_expansion/           # Test set sentences with mention expansions (3 datasets)
+├── similarity_based_expansion_selection/ # Selected mention expansion using similarity measurement
+│   └── IndGEL/                       # Results for IndGEL dataset
+│       └── few-shot/                 # Few-shot prompt results
+│           └── selected_expansion_with_scores_Llama-3_Komodo_few-shot_IndGEL.tsv
+│                                      # Example: similarity-based selection results from
+│                                      # Llama-3 and Komodo mention expansions
+│           └── selected_expansion_Llama-3_Komodo_few-shot_IndGEL
+│                                      # Example: final version of similarity-based selection results from
+│                                      # Llama-3 and Komodo mention expansions
 ├── requirements.txt                  # Python dependencies
 ├── README.md                         # Project overview
 └── LICENSE                           # License file
