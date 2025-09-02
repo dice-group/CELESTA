@@ -23,6 +23,11 @@ CELESTA is a hybrid Entity Disambiguation (ED) framework designed for low-resour
 │   ├── mention_expansion_implementation  # Apply mention expansion to sentences
 │   └── refined_zero_shot_evaluation.py   # CELESTA evaluation with ReFinED
 │
+├── mention_expansion_results/        # mention expansion results using LLMs
+│   └── IndGEL/                       # IndGEL dataset results	
+│       └── few-shot/                 # Few-shot prompt results for IndGEL dataset
+│           └── mention_expansion_IndGEL_Llama-3.tsv # Example: mention expansion results using Llama-3 for IndGEL dataset 
+│           └── mention_expansion_IndGEL_Llama-3_final.tsv # Example: final version of mention expansion results using Llama-3 for IndGEL dataset
 ├── with_mention_expansion/           # Sentences with mention expansion (test sets of 3 datasets)
 ├── similarity_based_expansion_selection/
 │   └── IndGEL/                       # IndGEL dataset results
