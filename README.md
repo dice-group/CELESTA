@@ -36,7 +36,7 @@ CELESTA is a hybrid Entity Disambiguation (ED) framework designed for low-resour
 │           └── selected_expansion_with_scores_Llama-3_Komodo_few-shot_IndGEL.tsv
 │                                      # Example: similarity-based selection results from
 │                                      # Llama-3 and Komodo mention expansions
-│           └── selected_expansion_Llama-3_Komodo_few-shot_IndGEL
+│           └── selected_expansion_Llama-3_Komodo_few-shot_IndGEL.tsv
 │                                      # Example: final version of similarity-based selection results from
 │                                      # Llama-3 and Komodo mention expansions
 ├── requirements.txt                  # Python dependencies
@@ -140,7 +140,7 @@ select_expansion.py [-h] [--input_dir INPUT_DIR] [--output_dir OUTPUT_DIR]
                     [--dataset DATASET] [--prompt_type PROMPT_TYPE] 
                     [--threshold THRESHOLD]
 
-Example: python mention_expansion_selection.py --input_dir ../similarity_based_expansion_selection/ --output_dir ../similarity_based_expansion_selection/ --dataset IndGEL --prompt_type few-shot --threshold 0.80
+Example: python mention_expansion_selection.py --input_dir ../mention_expansion_results/ --output_dir ../similarity_based_expansion_selection/ --dataset IndGEL --prompt_type few-shot --threshold 0.80
 
 ```
 

@@ -14,7 +14,7 @@ import os
 
 def parse_arguments():
     parser = argparse.ArgumentParser(description="Mention Expansion Similarity-Based Selection")
-    parser.add_argument('--input_dir', type=str, default="../similarity_based_expansion_selection",
+    parser.add_argument('--input_dir', type=str, default="../mention_expansion_results",
                         help="Base directory containing dataset folder")
     parser.add_argument('--output_dir', type=str, default="../similarity_based_expansion_selection",
                         help="Directory to save the selected results")
@@ -34,7 +34,7 @@ def main():
     THRESHOLD = args.threshold
 
     # ==== Paths ====
-    input_path = f"{args.input_dir}/{dataset}/{prompt}/entity_expansion_testSet_allLLMs_{prompt}_{dataset}.tsv"
+    input_path = f"{args.input_dir}/{dataset}/{prompt}/mention_expansion_allLLMs_{dataset}.tsv"
     output_dir = f"{args.output_dir}/{dataset}/{prompt}/"
     os.makedirs(output_dir, exist_ok=True)
 
