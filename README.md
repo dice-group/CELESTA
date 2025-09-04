@@ -39,8 +39,9 @@ CELESTA is a hybrid Entity Disambiguation (ED) framework designed for low-resour
 │           └── selected_expansion_Llama-3_Komodo_few-shot_IndGEL.tsv
 │                                      # Example: final version of similarity-based selection results from
 │                                      # Llama-3 and Komodo mention expansions
-├── requirements.txt                  # Python dependencies for CELESTA
-├── equirements_refined.txt           # Python dependencies for ReFinED
+├── requirements.txt             	# Python dependencies for CELESTA
+├── refined/ 				# Subdirectory for ReFinED setup
+│   └── requirements.txt 		# Python dependencies for ReFinED
 ├── README.md                         # Project overview
 └── LICENSE                           # License file
 ```
@@ -173,8 +174,11 @@ Example: python mention_expansion_implementation.py --prompt_type few-shot --dat
 conda create -n refined python=3.10 -y
 conda activate refined
 
-# Install dependencies from requirements_refined.txt
-pip install -r ../CELESTA/requirements_refined.txt
+# Install dependencies for ReFinED
+pip install -r ../refined/requirements.txt
+
+# Change directory to the CELESTA folder
+cd ..
 
 # Clone the repository
 git clone https://github.com/amazon-science/ReFinED
@@ -182,7 +186,7 @@ git clone https://github.com/amazon-science/ReFinED
 # Change the directory to ReFinED/src/
 cd ReFinED/src/
 
-# Store refined_zero_shot_evaluation.py in the current directory
+# Store refined_zero_shot_evaluation.py in the current directory. The file is in the CELESTA/refined/ folder. 
 
 # Run the script
 python refined_zero_shot_evaluation.py [-h] [--input_dir INPUT_DIR] [--dataset DATASET]
