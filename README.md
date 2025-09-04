@@ -39,7 +39,8 @@ CELESTA is a hybrid Entity Disambiguation (ED) framework designed for low-resour
 │           └── selected_expansion_Llama-3_Komodo_few-shot_IndGEL.tsv
 │                                      # Example: final version of similarity-based selection results from
 │                                      # Llama-3 and Komodo mention expansions
-├── requirements.txt                  # Python dependencies
+├── requirements.txt                  # Python dependencies for CELESTA
+├── equirements_refined.txt           # Python dependencies for ReFinED
 ├── README.md                         # Project overview
 └── LICENSE                           # License file
 ```
@@ -173,7 +174,7 @@ conda create -n refined python=3.10 -y
 conda activate refined
 
 # Install dependencies from requirements_refined.txt
-pip install -r requirements_refined.txt
+pip install -r ../CELESTA/requirements_refined.txt
 
 # Clone the repository
 git clone https://github.com/amazon-science/ReFinED
