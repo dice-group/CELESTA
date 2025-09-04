@@ -168,7 +168,7 @@ Example: python mention_expansion_implementation.py --prompt_type few-shot --dat
 ### Entity Candidates and Final Entity Selection
 1. Using [ReFinED](https://github.com/amazon-science/ReFinED) 
 ```
-# Clone the [repository](https://github.com/amazon-science/ReFinED) 
+# Clone the repository
 git clone https://github.com/amazon-science/ReFinED
 
 # Change the directory to ReFinED/src/
