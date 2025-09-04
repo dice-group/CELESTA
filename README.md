@@ -136,7 +136,7 @@ cd ../mention_expansion_results/{dataset}/{prompt_type}
 cd src
 
 # Run the mention expansion selection script
-select_expansion.py [-h] [--input_dir INPUT_DIR] [--output_dir OUTPUT_DIR] 
+mention_expansion_selection.py [-h] [--input_dir INPUT_DIR] [--output_dir OUTPUT_DIR] 
                     [--dataset DATASET] [--prompt_type PROMPT_TYPE] 
                     [--threshold THRESHOLD]
 
