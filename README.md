@@ -168,6 +168,13 @@ Example: python mention_expansion_implementation.py --prompt_type few-shot --dat
 ### Entity Candidates and Final Entity Selection
 1. Using [ReFinED](https://github.com/amazon-science/ReFinED) 
 ```
+# Create and activate a conda environment, e.g., "refined"
+conda create -n refined python=3.10 -y
+conda activate refined
+
+# Install dependencies from requirements_refined.txt
+pip install -r requirements_refined.txt
+
 # Clone the repository
 git clone https://github.com/amazon-science/ReFinED
 

@@ -1,0 +1,9 @@
+torch
+transformers
+spacy
+faiss-cpu
+pandas
+numpy
+pyyaml
+tqdm
+
