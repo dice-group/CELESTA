@@ -141,6 +141,14 @@ mention_expansion_selection.py [-h] [--input_dir INPUT_DIR] [--output_dir OUTPUT
                     [--threshold THRESHOLD]
 
 Example: python mention_expansion_selection.py --input_dir ../mention_expansion_results/ --output_dir ../similarity_based_expansion_selection/ --dataset IndGEL --prompt_type few-shot --threshold 0.80
+Example results: selected_expansion_with_scores_Llama-3_Komodo_few-shot_IndGEL
+```
+2. Prepare selected mention expansion results for disambiguation process
+```
+# Keep necessary columns (sent_id, mention, sentence, best_expansion) from the results and remove the remaining ones
+# Change column header best_expansion to mention expansion
+
+Example results: selected_expansion_Llama-3_Komodo_few-shot_IndGEL
 
 ```
 

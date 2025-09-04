@@ -1,9 +1,4 @@
-# Mention expansion selection from two LLM outputs (multilingual and monolingual) using similarity measurement.
-# 1. Each mention expansion replaces the original mention in the sentence, and sentence-level embeddings are computed.
-# 2. The same process is applied to the original sentence (with the mention highlighted).
-# 3. Cosine similarity is measured between each expansion-modified sentence and the original sentence.
-# 4. The expansion with the highest similarity above the defined threshold is selected.
-
+# mention expansion selection from two LLMs results using similarity measurement
 
 import argparse
 import torch
@@ -49,6 +44,10 @@ def main():
     # ==== Load dataset ====
     df = pd.read_csv(input_path, sep="\t", quoting=csv.QUOTE_NONE, engine="python", on_bad_lines="skip")
 
+    # If sent_id not in input, generate one
+    if "sent_id" not in df.columns:
+        df.insert(0, "sent_id", range(1, len(df) + 1))
+
     # ==== Load Sentence-BERT model ====
     model = SentenceTransformer("sentence-transformers/LaBSE")
     model.eval()
@@ -66,7 +65,7 @@ def main():
             embeddings_cache[(idx, "original")] = model.encode(sentence_with_mention, convert_to_tensor=True)
 
             for col in df.columns:
-                if col in ["sentence", "mention"]:
+                if col in ["sent_id", "sentence", "mention"]:
                     continue
                 if isinstance(row[col], str) and row[col].strip().lower() != "none":
                     expansion_sentence = sentence.replace(mention, row[col].strip())
@@ -77,6 +76,7 @@ def main():
     def process_llm_pair(llm1, llm2):
         results = []
         for idx, row in df.iterrows():
+            sent_id = row.get("sent_id")
             sentence = row.get("sentence")
             mention = row.get("mention")
 
@@ -116,6 +116,7 @@ def main():
                 similarity_scores = {llm: None for llm in routed_llms}
 
             results.append({
+                "sent_id": sent_id,
                 "mention": mention,
                 "sentence": sentence,
                 "routed_llms": ",".join(routed_llms),
@@ -133,7 +134,7 @@ def main():
 
         output_path = os.path.join(output_dir, f"selected_expansion_with_scores_{llm1}_{llm2}_{prompt}_{dataset}.tsv")
         pd.DataFrame(results).to_csv(output_path, sep="\t", index=False)
-        print(f"Saved results for {llm1} & {llm2} → {output_path}")
+        print(f"✅ Saved results for {llm1} & {llm2} → {output_path}")
 
     for llm1, llm2 in llm_pairs:
         process_llm_pair(llm1, llm2)
