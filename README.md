@@ -186,7 +186,7 @@ git clone https://github.com/amazon-science/ReFinED
 # Change the directory to ReFinED/src/
 cd ReFinED/src/
 
-# Store refined_zero_shot_evaluation.py in the current directory. The file is in the CELESTA/refined/ folder. 
+# Store refined_zero_shot_evaluation.py in the current directory. The file is in the CELESTA/src/entity_disambiguation/CELESTA-ReFinED folder. 
 
 # Run the script
 python refined_zero_shot_evaluation.py [-h] [--input_dir INPUT_DIR] [--dataset DATASET]
