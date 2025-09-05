@@ -18,10 +18,10 @@ CELESTA is a hybrid Entity Disambiguation (ED) framework designed for low-resour
 │   └── celesta_architecture.jpg      # Architecture visualizations
 │
 ├── src/                              # Source code for CELESTA modules
-│   ├── mention_expansion/            # Scripts for mention expansion
-│   ├── mention_expansion_selection/  # Scripts for mention expansion selection
+│   ├── mention_expansion            # Scripts for mention expansion
+│   ├── mention_expansion_selection  # Scripts for mention expansion selection
 │   ├── mention_expansion_implementation  # Apply mention expansion to sentences
-│   └── refined_zero_shot_evaluation.py   # CELESTA evaluation with ReFinED
+│   └── entity_disambiguation/ 	     # Scripts for disambiguation process
 │
 ├── mention_expansion_results/        # Mention expansion outputs from individual LLMs
 │   └── IndGEL/                       # Results for IndGEL dataset	
